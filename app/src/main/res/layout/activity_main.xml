@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.269" />
 
     <EditText
-        android:id="@+id/idit_senha"
+        android:id="@+id/edit_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
@@ -36,13 +36,17 @@
         android:id="@+id/edit_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="136dp"
         android:ems="10"
         android:hint="E-mail"
+
         android:inputType="text|textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/idit_senha"
+        app:layout_constraintBottom_toTopOf="@+id/edit_senha"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <Button
