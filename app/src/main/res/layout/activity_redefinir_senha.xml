@@ -8,7 +8,7 @@
     tools:context=".Redefinir_senha">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_redefinir_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enviamos um código para seu email"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/button_redefinir_senha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         android:layout_width="319dp"
         android:layout_height="51dp"
         android:text="insera o código de 4 digitos para redefinir sua senha"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/button_redefinir_senha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,12 +41,13 @@
         app:layout_constraintVertical_bias="0.266" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/campo_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Insira seu email:"
         android:inputType="text"
-        android:text="____      ____    ____    ____"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
