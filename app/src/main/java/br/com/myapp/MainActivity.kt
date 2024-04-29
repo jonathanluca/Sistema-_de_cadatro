@@ -17,8 +17,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Inicializa o Firebase Auth
         auth = Firebase.auth
-        navEntreTelas()
+
+        // Verifica se o usuário já está logado
+        if (auth.currentUser != null) {
+            // Usuário já está logado, redireciona para a tela inicial
+            val telaInicial = Intent(this, Tela_incial::class.java)
+            startActivity(telaInicial)
+            finish()
+        } else {
+            // Navegação entre telas quando não logado
+            navEntreTelas()
+        }
     }
 
     private fun navEntreTelas() {
@@ -38,22 +50,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.RedefinirSenha.setOnClickListener {
-            val Redefinir_senha = Intent(this, Redefinir_senha::class.java)
-            startActivity(Redefinir_senha)
+            val redefinirSenha = Intent(this, Redefinir_senha::class.java)
+            startActivity(redefinirSenha)
         }
-        binding.Sair.setOnClickListener {
-            finishAffinity()
+        binding.NaoTemConta.setOnClickListener {
+            val Criar_contas = Intent(this, Criar_contas::class.java)
+            startActivity(Criar_contas)
         }
     }
-
-
 
     private fun autenticar(email: String, senha: String) {
         auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(baseContext, "Autenticado com sucesso!", Toast.LENGTH_LONG).show()
-                val Tela_incial = Intent(this, Tela_incial::class.java)
-                startActivity(Tela_incial)
+                val telaInicial = Intent(this, Tela_incial::class.java)
+                startActivity(telaInicial)
+                finish() // Finaliza a atividade de login após sucesso
             } else {
                 Toast.makeText(baseContext, "Autenticação falhou, tente novamente.", Toast.LENGTH_LONG).show()
             }
