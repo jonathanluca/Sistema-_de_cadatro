@@ -22,11 +22,9 @@ class Tela_incial : AppCompatActivity() {
         navEntreTelas()
     }
 
-
-
-    @SuppressLint("MissingSuperCall")  // Não deixo o usuario voltar para a tela anterior
+    @SuppressLint("MissingSuperCall") // função que não deixa eu voltar para a tela de login
     override fun onBackPressed() {
-        Toast.makeText(this, "Não é possível voltar para a tela de cadastro", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Não é possível voltar para tela incial", Toast.LENGTH_SHORT).show()
     }
 
     private fun navEntreTelas() {
@@ -38,6 +36,10 @@ class Tela_incial : AppCompatActivity() {
         binding.registrarPonto.setOnClickListener {
             val registrarPonto = Intent(this, Registrar_ponto::class.java)
             startActivity(registrarPonto)
+        }
+        binding.criarCalendario.setOnClickListener {
+            val calendario = Intent(this, Calendario::class.java)
+            startActivity(calendario)
         }
     }
 }
